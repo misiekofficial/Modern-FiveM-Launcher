@@ -68,7 +68,7 @@
                 </Button.Effect>
             </Button>
 
-            <Button Content="Wyczyść Cache" Name="CacheRedMButton" HorizontalAlignment="Left" Margin="833,276,0,0" Grid.Row="2" VerticalAlignment="Top" Width="198" Height="46" Style="{DynamicResource MaterialDesignRaisedButton}" BorderBrush="#FFD40B14" FontSize="18" Click="Cache_Button" Cursor="Hand" Grid.ColumnSpan="2">
+            <Button Content="Wyczyść Cache" Name="CacheRedMButton" HorizontalAlignment="Left" Margin="13,276,0,0" Grid.Row="2" VerticalAlignment="Top" Width="198" Height="46" Style="{DynamicResource MaterialDesignRaisedButton}" BorderBrush="#FFD40B14" FontSize="18" Click="Cache_Button" Cursor="Hand" Grid.Column="1">
                 <Button.Background>
                     <ImageBrush ImageSource="/Pages/default.png"/>
                 </Button.Background>
