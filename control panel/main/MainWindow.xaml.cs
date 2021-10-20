@@ -8,8 +8,6 @@ namespace control_panel
     //główne okno [Misiek <3]
     public partial class MainWindow : Window
     {
-        [DllImport("user32.dll", EntryPoint = "FindWindowEx")]
-        public static extern int FindWindowEx(int hwndParent, int hwndEnfant, int lpClasse, string lpTitre);
 
         public MainWindow()
         {
