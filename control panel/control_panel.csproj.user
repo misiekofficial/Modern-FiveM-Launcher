@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="loading\mainloading.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="loginpanel\registerpanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\GameSelector.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\ListaSerwerow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\StronaGlowna.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\SwitcherMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="loading\mainloading.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="loginpanel\registerpanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="main\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\GameSelector.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\ListaSerwerow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\StronaGlowna.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\SwitcherMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

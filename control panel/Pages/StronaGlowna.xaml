@@ -1,0 +1,329 @@
+﻿<UserControl x:Class="control_panel.Pages.StronaGlowna"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
+             xmlns:pages="clr-namespace:control_panel.Pages"
+             mc:Ignorable="d"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="330"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <pages:SwitcherMenu Grid.Row="0"/>
+
+        <Grid Grid.Column="1" Background="#151313">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="250"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Strona Główna" Foreground="White" FontStyle="Italic" FontSize="25" FontWeight="Light" Margin="50 0 0 0" VerticalAlignment="Center"/>
+
+            <UniformGrid Grid.Row="1" Columns="4" Margin="20 0 0 0">
+                <Border Background="#151313" Margin="20,40,-1130,40" CornerRadius="3">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.7*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel>
+
+                            <Button Click="Graj_Button"  Width="687" Height="84" Panel.ZIndex="1" HorizontalAlignment="Center" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="0,-20,0,0" Background="#FF2FC8EA" BorderBrush="#FF2FC8EA">
+                                <TextBlock Text="połącz się z Hovel Roleplay" Foreground="White" FontSize="40" Width="502" FontFamily="Microsoft PhagsPa"/>
+                            </Button>
+                        </StackPanel>
+
+                        <Border BorderThickness="0 0 0 1" Margin="20 0 20 0" VerticalAlignment="Bottom" BorderBrush="#E3E3E3"/>
+
+                    </Grid>
+                </Border>
+
+            </UniformGrid>
+
+            <UniformGrid Grid.Row="2" Columns="3">
+                <Border Background="#151313" Margin="20 40 20 40" CornerRadius="3">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.7*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Panel.ZIndex="1" Margin="20 -20 20 0">
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" Opacity=".2" ShadowDepth="1"/>
+                            </Grid.Effect>
+                            <Grid.Resources>
+                                <Style TargetType="lvc:ColumnSeries">
+                                    <Setter Property="StrokeThickness" Value="0"></Setter>
+                                    <Setter Property="Stroke" Value="White"></Setter>
+                                    <Setter Property="Fill" Value="White"></Setter>
+                                    <Setter Property="MaxColumnWidth" Value="5"></Setter>
+                                </Style>
+                                <Style TargetType="lvc:Axis">
+                                    <Setter Property="FontSize" Value="12"></Setter>
+                                    <Setter Property="Foreground" Value="#64FFFFFF"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="AxisOrientation" Value="Y">
+                                            <Setter Property="IsMerged" Value="True"></Setter>
+                                            <Setter Property="MaxValue" Value="10"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                                <Style TargetType="lvc:Separator">
+                                    <Setter Property="StrokeThickness" Value="1"></Setter>
+                                    <Setter Property="Stroke" Value="#4BFFFFFF"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="AxisOrientation" Value="X">
+                                            <Setter Property="IsEnabled" Value="False"></Setter>
+                                            <Setter Property="Step" Value="1"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Resources>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height=".50*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border x:Name="Border2" Grid.Row="0" Grid.RowSpan="4" CornerRadius="5" Background="White" />
+                            <Border  Grid.RowSpan="3" Background="#51AB54" ></Border>
+                            <lvc:CartesianChart  Grid.Row="2" Margin="10, 0, 10, 20"  Hoverable="False" DataTooltip="{x:Null}">
+                                <lvc:CartesianChart.Series>
+                                    <lvc:ColumnSeries Values="5,9,8,6,1,5,7,3,6,3"/>
+                                </lvc:CartesianChart.Series>
+                            </lvc:CartesianChart>
+                        </Grid>
+
+                        <Grid Grid.Row="1" Margin="30 0 0 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.2*"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock  Text="Last Players" VerticalAlignment="Bottom" Foreground="White"  FontWeight="Light"  FontSize="16"/>
+                            <Border Grid.Row="1" BorderThickness="0 0 0 1" Margin="0 0 20 0" VerticalAlignment="Bottom" BorderBrush="#E3E3E3"/>
+                            <TextBlock Grid.Row="2" Text="updated 4 minutes ago" Foreground="#848484"  FontWeight="Light" VerticalAlignment="Center" FontSize="12"/>
+                        </Grid>
+
+                    </Grid>
+                </Border>
+
+                <Border Background="#151313" Margin="20 40 20 40" CornerRadius="3">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.7*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Panel.ZIndex="1" Margin="20 -20 20 0">
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" Opacity=".2" ShadowDepth="1"/>
+                            </Grid.Effect>
+                            <Grid.Resources>
+                                <Style TargetType="lvc:ColumnSeries">
+                                    <Setter Property="StrokeThickness" Value="0"></Setter>
+                                    <Setter Property="Stroke" Value="White"></Setter>
+                                    <Setter Property="Fill" Value="White"></Setter>
+                                    <Setter Property="MaxColumnWidth" Value="5"></Setter>
+                                </Style>
+                                <Style TargetType="lvc:Axis">
+                                    <Setter Property="FontSize" Value="12"></Setter>
+                                    <Setter Property="Foreground" Value="#64FFFFFF"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="AxisOrientation" Value="Y">
+                                            <Setter Property="IsMerged" Value="True"></Setter>
+                                            <Setter Property="MaxValue" Value="10"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                                <Style TargetType="lvc:Separator">
+                                    <Setter Property="StrokeThickness" Value="1"></Setter>
+                                    <Setter Property="Stroke" Value="#4BFFFFFF"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="AxisOrientation" Value="X">
+                                            <Setter Property="IsEnabled" Value="False"></Setter>
+                                            <Setter Property="Step" Value="1"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Resources>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height=".50*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border  Grid.Row="0" Grid.RowSpan="4" CornerRadius="5" Background="White" />
+                            <Border Grid.Row="0" Grid.RowSpan="3" Background="#FD950E" ></Border>
+
+                            <lvc:CartesianChart  Grid.Row="2" Margin="10, 0, 10, 20"  Hoverable="False" DataTooltip="{x:Null}">
+                                <lvc:CartesianChart.Series>
+                                    <lvc:LineSeries Stroke="White" Values="5,9,8,6,1,5,7,3,6,3"/>
+                                </lvc:CartesianChart.Series>
+                            </lvc:CartesianChart>
+                        </Grid>
+
+                        <Grid Grid.Row="1" Margin="30 0 0 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.2*"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock  Text="SOON" VerticalAlignment="Bottom" Foreground="White"  FontWeight="Light"  FontSize="16"/>
+                            <Border Grid.Row="1" BorderThickness="0 0 0 1" Margin="0 0 20 0" VerticalAlignment="Bottom" BorderBrush="#E3E3E3"/>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Background="#151313" Margin="20 40 20 40" CornerRadius="3">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.7*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Panel.ZIndex="1" Margin="20 -20 20 0">
+                            <Grid.Effect>
+                                <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" Opacity=".2" ShadowDepth="1"/>
+                            </Grid.Effect>
+                            <Grid.Resources>
+                                <Style TargetType="lvc:ColumnSeries">
+                                    <Setter Property="StrokeThickness" Value="0"></Setter>
+                                    <Setter Property="Stroke" Value="White"></Setter>
+                                    <Setter Property="Fill" Value="White"></Setter>
+                                    <Setter Property="MaxColumnWidth" Value="5"></Setter>
+                                </Style>
+                                <Style TargetType="lvc:Axis">
+                                    <Setter Property="FontSize" Value="12"></Setter>
+                                    <Setter Property="Foreground" Value="#64FFFFFF"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="AxisOrientation" Value="Y">
+                                            <Setter Property="IsMerged" Value="True"></Setter>
+                                            <Setter Property="MaxValue" Value="10"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                                <Style TargetType="lvc:Separator">
+                                    <Setter Property="StrokeThickness" Value="1"></Setter>
+                                    <Setter Property="Stroke" Value="#4BFFFFFF"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="AxisOrientation" Value="X">
+                                            <Setter Property="IsEnabled" Value="False"></Setter>
+                                            <Setter Property="Step" Value="1"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Resources>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height=".50*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border  Grid.Row="0" Grid.RowSpan="4" CornerRadius="5" Background="White" />
+                            <Border Grid.Row="0" Grid.RowSpan="3" Background="#E94543" ></Border>
+                            <lvc:CartesianChart  Grid.Row="2" Margin="10, 0, 10, 20"  Hoverable="False" DataTooltip="{x:Null}">
+                                <lvc:CartesianChart.Series>
+                                    <lvc:LineSeries Stroke="White" Values="5,9,8,6,1,5,7,3,6,3"/>
+                                </lvc:CartesianChart.Series>
+                            </lvc:CartesianChart>
+
+                        </Grid>
+
+                        <Grid Grid.Row="1" Margin="30 0 0 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.2*"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock  Text="SOON" VerticalAlignment="Bottom" Foreground="White"  FontWeight="Light"  FontSize="16"/>
+                            <Border Grid.Row="1" BorderThickness="0 0 0 1" Margin="0 0 20 0" VerticalAlignment="Bottom" BorderBrush="#E3E3E3"/>
+                        </Grid>
+
+                    </Grid>
+                </Border>
+
+
+            </UniformGrid>
+
+            <UniformGrid Grid.Row="3" Columns="2">
+                <Border Grid.Row="3" Background="#151313" Margin="20 40 20 40" CornerRadius="3">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="1.5*"/>
+                        </Grid.RowDefinitions>
+                        <Button Panel.ZIndex="1" Margin="20 -100 20 0" HorizontalContentAlignment="Left"
+                                  materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                                Height="120" BorderBrush="#16bde2" Background="#16bde2">
+                            <StackPanel>
+                                <TextBlock Grid.Row="2" Text="Informacje o Hovel Roleplay" Foreground="White"  FontWeight="Light" VerticalAlignment="Center" FontSize="26"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Grid Grid.Row="1">
+                            <UniformGrid Rows="1" Columns="1"/>
+                        </Grid>
+                        <TextBlock Text="Hovel Roleplay jest to serwer z: " Foreground="#16bde2" FontSize="16" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Margin="20,79,0,0" Grid.RowSpan="2"/>
+                        <fa:ImageAwesome Icon="Check" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                         Foreground="LightBlue" Width="13" Height="21" Margin="20,23,0,0" Grid.Row="1" RenderTransformOrigin="0.615,0.153" />
+                        <TextBlock Text="Autorskimi skryptami " Foreground="#16bde2" FontSize="14" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Margin="47,20,0,0" Grid.Row="1"/>
+                        <fa:ImageAwesome Icon="Check" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                         Foreground="LightBlue" Width="13" Height="21" Margin="20,61,0,0" Grid.Row="1" />
+                        <TextBlock Text="Aktywną administracją " Foreground="#16bde2" FontSize="14" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Margin="47,56,0,0" Grid.Row="1"/>
+                        <fa:ImageAwesome Icon="Check" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                         Foreground="LightBlue" Width="13" Height="21" Margin="260,63,0,0" Grid.Row="1" />
+                        <TextBlock Text="Przyjemną ekonomią " Foreground="#16bde2" FontSize="14" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Margin="288,58,0,0" Grid.Row="1"/>
+                        <fa:ImageAwesome Icon="Check" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                         Foreground="LightBlue" Width="13" Height="21" Margin="260,28,0,0" Grid.Row="1" RenderTransformOrigin="0.615,1.01" />
+                        <TextBlock Text="Rekrutacją do frakcji " Foreground="#16bde2" FontSize="14" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Margin="288,22,0,0" Grid.Row="1"/>
+                    </Grid>
+
+                </Border>
+
+                <Border Grid.Row="3" Background="#151313" Margin="20 40 20 40" CornerRadius="3">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="1.5*"/>
+                        </Grid.RowDefinitions>
+                        <Button Panel.ZIndex="1" Margin="20 -100 20 0"  HorizontalContentAlignment="Left"
+                                  materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                                Height="120" BorderBrush="#16bde2" Background="#16bde2">
+                            <StackPanel>
+                                <TextBlock Grid.Row="2" Text="Skład Administracji Hovel Roleplay" Foreground="White"  FontWeight="Light" VerticalAlignment="Center" FontSize="26"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Grid Grid.Row="1">
+                            <UniformGrid Rows="4" Columns="4">
+                                <TextBlock Text="Właściciele" Foreground="#16bde2" FontSize="16" HorizontalAlignment="Center"/>
+                                <TextBlock Text="Zarząd" Foreground="#16bde2" FontSize="16" HorizontalAlignment="Center"/>
+                                <TextBlock Text="Head Admin" Foreground="#16bde2" FontSize="16" HorizontalAlignment="Center"/>
+                                <TextBlock Text="Reszta Administracji" Foreground="#16bde2" FontSize="16" HorizontalAlignment="Center"/>
+
+                                <TextBlock Text="TrawisMontana" Foreground="White" HorizontalAlignment="Center"/>
+                                <TextBlock Text="!Marcinek" Foreground="White" HorizontalAlignment="Center"/>
+                                <TextBlock Text="Shidorii" Foreground="White" HorizontalAlignment="Center"/>
+
+                                <TextBlock Text="" HorizontalAlignment="Center"/>
+                                <TextBlock Text="Misiek" Foreground="White" HorizontalAlignment="Center"/>
+                                <TextBlock Text="Xynex" Foreground="White" HorizontalAlignment="Center"/>
+                                <TextBlock Text="" HorizontalAlignment="Center"/>
+                                <TextBlock Text="" HorizontalAlignment="Center"/>
+                                <TextBlock Text="" HorizontalAlignment="Center"/>
+                                <TextBlock Text="anormaiss" Foreground="White" HorizontalAlignment="Center"/>
+                            </UniformGrid>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </UniformGrid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>control_panel</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <Win32Resource></Win32Resource>
+    <ApplicationIcon>hovelv2.ico</ApplicationIcon>
+    <AssemblyName>control panel</AssemblyName>
+    <StartupObject>control_panel.App</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="main\MainWindow.xaml.cs~RF5a9d73d.TMP" />
+    <None Remove="Pages\default.png" />
+    <None Remove="Pages\PowerSignIcon.jpg" />
+    <None Remove="utils\ConsoleOutputUtils.cs~RF3853191.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="{215d64d2-031c-33c7-96e3-61794cd1ee61}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>4</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>215d64d2-031c-33c7-96e3-61794cd1ee61</Guid>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="WpfAnimatedGif">
+      <HintPath>bin\Release\netcoreapp3.1\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.7" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.2.1" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Notifications.Wpf" Version="0.1.1" />
+    <PackageReference Include="Prism.Core" Version="8.1.97" />
+    <PackageReference Include="Sitecore.FakeDb" Version="2.0.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Pages\default.png" />
+    <Resource Include="Pages\PowerSignIcon.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>
