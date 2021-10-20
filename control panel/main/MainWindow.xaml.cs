@@ -8,7 +8,6 @@ namespace control_panel
     //główne okno [Misiek <3]
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             InitializeComponent();
