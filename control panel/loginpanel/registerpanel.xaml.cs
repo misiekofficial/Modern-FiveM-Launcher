@@ -12,7 +12,6 @@ namespace control_panel.loginpanel
             InitializeComponent();
         }
 
-        //by osoba mogła sie zalogować musi podać developerowi dane którymi będzie się logował [Misiek <3][ps. nie chciało mi się robić pod bazę danych więc tak jest hehe :)]
         private void Button_Login_1(object sender, RoutedEventArgs e)
         {
             if (TextBoxEmail.Text == "misiek" && TextPassword.Password == "misiek123")
